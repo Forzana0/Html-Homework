@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 5px;
+            margin: 5px;
+        }
+        #all {
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            border-bottom: 1px solid rgb(83, 83, 83);
+        }
+        #content {
+            display: flex;
+        }
+
+        #left {
+            display: flex;
+            float: left;
+        }
+        #right {
+            display: flex;
+            float: right;
+        }
+        .headerImgs {
+            height: 75px;
+            width: 75px;
+        }
+        h3, h6 {
+            margin-top: 35px;
+        }
+        h3 {
+            font-size: 28px;
+        }
+        h6 {
+            font-size: 14px;
+        }
+
+        aside {
+            width: 20vw;
+        }
+        ul {
+            list-style: none;
+            width: 15vw;
+        }
+        li {
+            padding-left: 2vw; 
+            font-size: 1.5vw;
+            background-clip: padding-box;
+            background-color: white;
+            border-top: 1vh solid transparent;
+            border-bottom: 1vh solid transparent;
+        }
+        li::before {
+            content: '';
+            display: inline-block;
+            height: 3vh;
+            width: 3vw;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        li:hover {
+            background-color: rgb(255, 234, 238);
+            border-top: 1vh solid rgb(255, 234, 238);
+            border-bottom: 1vh solid rgb(255, 234, 238);
+        }
+        #incoming:before {
+            background-image: url("materials_hw_module_6_7/icons_hw/incom.png")
+        }
+        #outgoing:before {
+            background-image: url("materials_hw_module_6_7/icons_hw/outcom.png")
+        }
+        #drafts:before {
+            background-image: url("materials_hw_module_6_7/icons_hw/draft.png")
+        }
+        #spam:before {
+            background-image: url("materials_hw_module_6_7/icons_hw/spam.png")
+        }
+
+        .mail {
+            display: flex;
+            border-bottom: 1px solid rgb(160, 160, 160);
+            width: 79vw;
+            height: 6.5vh;
+        }
+        .mail:hover {
+            background-color: rgb(226, 226, 226);
+        }
+        .from {
+            display: flex;
+            width: 15vw;
+        }
+        .text {
+            display: flex;
+            width: 40vw;
+        }
+        .when {
+            float: right;
+            display: flex;
+            width: 10vw;
+        }
+        
+        .star{
+            height: 3vh;
+            width: 3vw;
+        }
+        .attach {
+            height: 2vh;
+            width: 1.5vw;
+        }
+        .blank {
+            width: 1.5vw;
+        }
+        p {
+            margin-top: 1.25vh;
+            font-size: 1.75vh;
+        }
+        .diss, .yapping {
+            color: rgb(160, 160, 160);
+        }
+
+        @media screen and (max-width: 850px) {
+            .text {
+                flex-direction: column;
+                width: 35vw;
+            }
+            .yapping {
+                margin-top: -2vh;
+            }
+            .diss {
+                display: none;
+            }
+            ul {
+                width: 20vw;
+            }
+            li {
+                padding-left: 5vw; 
+            }
+            li::before {
+                height: 4vh;
+                width: 4vw;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            span {
+                display: none;
+            }
+            li::before {
+                height: 5vh;
+                width: 5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="all">
+        <header>
+            <div id="left">
+                <img src="materials_hw_module_6_7/icons_hw/mail.png" class="headerImgs"></img>
+                <h3>MY MAIL</h3>
+            </div>
+            <div id="right">
+                <h6>user@mymail.com</h6>
+                <img src="materials_hw_module_6_7/icons_hw/account.png" class="headerImgs"></img>
+            </div>
+        </header>
+
+        <div id="content">
+            <aside>
+                <ul>
+                    <li id="incoming"><span>Incoming</span></li>
+                    <li id="outgoing"><span>Outgoing</span></li>
+                    <li id="drafts"><span>Drafts</span></li>
+                    <li id="spam"><span>Spam</span></li>
+                </ul>
+            </aside>
+
+            <main>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star1.svg" class="star"> <p>me, Alex</p></img></div>
+                    <div class="text"><p>Trip to South America</p><p class="diss">-</p><p class="yapping">lorem ipsum dolor sit amet, consectetur...</p></div>
+                    <div class="when"><img src="materials_hw_module_6_7/icons_hw/attach.png" class="attach"> <p>12 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star1.svg" class="star"> <p>me, John</p></img></div>
+                    <div class="text"><p>Santa Monica trip</p><p class="diss">-</p><p class="yapping">lorem ipsum dolor sit amet, consectetur...</p></div>
+                    <div class="when"><img src="materials_hw_module_6_7/icons_hw/attach.png" class="attach"> <p>12 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star1.svg" class="star"> <p>me, John, Alex</p></img></div>
+                    <div class="text"><p>Birtday party</p><p class="diss">-</p><p class="yapping">20.04.2019</p></div>
+                    <div class="when"><p class="blank"></p> <p>11 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star2.svg" class="star"> <p>Mari white</p></img></div>
+                    <div class="text"><p>Report (march 2019)</p></div>
+                    <div class="when"><img src="materials_hw_module_6_7/icons_hw/attach.png" class="attach"> <p>10 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star1.svg" class="star"> <p>me, Elena</p></img></div>
+                    <div class="text"><p>lorem ipsum dolor</p><p class="diss">-</p><p class="yapping">lorem ipsum dolor sit amet, consectetur...</p></div>
+                    <div class="when"><img src="materials_hw_module_6_7/icons_hw/attach.png" class="attach"> <p>10 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star1.svg" class="star"> <p>me, John</p></img></div>
+                    <div class="text"><p>lorem ipsum dolor</p><p class="diss">-</p><p class="yapping">lorem ipsum dolor sit amet, consectetur...</p></div>
+                    <div class="when"><p class="blank"></p> <p>5 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star2.svg" class="star"> <p>Strive</p></img></div>
+                    <div class="text"><p>Really great news!!!</p></div>
+                    <div class="when"><p class="blank"></p> <p>1 apr.</p></img></div>
+                </div>
+                <div class="mail">
+                    <div class="from"><img src="materials_hw_module_6_7/icons_hw/star2.svg" class="star"> <p>Mari White</p></img></div>
+                    <div class="text"><p>Report (february 2019)</p></div>
+                    <div class="when"><img src="materials_hw_module_6_7/icons_hw/attach.png" class="attach"> <p>1 mar.</p></img></div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
